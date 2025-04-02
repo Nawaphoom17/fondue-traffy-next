@@ -11,9 +11,9 @@ import * as Api from "@/api/Api";
 import useCustom from "@/api/customHook";
 import axios from "axios";
 
-function HomePage(props) {
+function DashboardPage(props) {
     const [selectedProvinceOption, setSelectedProvinceOption] = useState({ name: "กรุงเทพมหานคร", });
-    const [selectedOrgOption, setSelectedOrgOption] = useState({ name: "หน่วยงานทั้งหมด" });
+    const [selectedOrgOption, setSelectedOrgOption] = useState({ name: "หน่วยงานทั้งหมด"});
     const [selectedPeriodOption, setSelectedPeriodOption] = useState({ name: "รายเดือน" });
     const [dataBKK, setDataBKK] = useState([]);
     const [globalState, setGlobalState] = useCustom();
@@ -21,36 +21,7 @@ function HomePage(props) {
 
     const renderCount = useRef(0);
     renderCount.current += 1;
-    console.log(`✅✅✅ HomePage rendered: ${renderCount.current} ครั้ง`);
-
-    const data_bkk = [
-        {
-            "fonduegroup_id": 7315,
-            "fonduegroup_name": "กรุงเทพมหานคร",
-            "post_count_all": 25984,
-            "post_count_finish": 11383,
-            "post_finish_percentage": 43.81,
-            "post_count_star": 4465,
-            "star_percentage": 78.25,
-            "period": "current month",
-            "yyyy_mm": "2025-03",
-            "duration_minutes_inprogress": 439,
-            "duration_minutes_finished": 2812
-        },
-        {
-            "fonduegroup_id": 7315,
-            "fonduegroup_name": "กรุงเทพมหานคร",
-            "post_count_all": 27438,
-            "post_count_finish": 17451,
-            "post_finish_percentage": 63.6,
-            "post_count_star": 6639,
-            "star_percentage": 75.7,
-            "period": "1 month ago",
-            "yyyy_mm": "2025-02",
-            "duration_minutes_inprogress": 466,
-            "duration_minutes_finished": 3129
-        }
-    ]
+    console.log(`✅✅✅ DashboardPage rendered: ${renderCount.current} ครั้ง`);
 
     // useEffect(() => {
     //     console.log("Dashboard ชื่อจังหวัดที่ฉันเลือก มีการเปลี่ยนแปลง:", selectedProvinceOption);
@@ -117,4 +88,4 @@ function HomePage(props) {
     )
 }
 
-export default HomePage
+export default DashboardPage

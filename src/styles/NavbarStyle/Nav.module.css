@@ -1,0 +1,98 @@
+/* ============================================ */
+/* Navbar Container */
+/* ============================================ */
+.container {
+    height: 56px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ababab;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+/* ============================================ */
+/* Left Menu */
+/* ============================================ */
+.left_menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* รูปโลโก้ใน left_menu */
+.left_menu img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+/* ลิงก์ใน left_menu */
+.left_menu a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* ลิงก์ที่เคยคลิกแล้ว */
+.left_menu a:visited {
+    color: inherit;
+}
+
+/* Hover effect สำหรับลิงก์ */
+.left_menu a:hover {
+    transform: scale(1.1);
+    border-bottom: #000 2px solid;
+    color: #000;
+}
+
+/* เมื่อ link มี class .active ให้เอฟเฟกต์ hover ถูกเอาออก */
+.active,
+.left_menu .active:hover {
+    font-weight: bold;
+    border-bottom: #000 2px solid;
+    transform: none;
+    /* ป้องกัน transform จาก hover */
+}
+
+/* ============================================ */
+/* Right Menu */
+/* ============================================ */
+.right_menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ปุ่มใน right_menu */
+.btn_nav {
+    width: fit-content;
+    height: 40px;
+    border: 1px solid #ababab;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* สีของปุ่มที่เคยคลิกแล้ว */
+.btn_nav:visited {
+    color: inherit;
+}
+
+/* Hover effect สำหรับปุ่ม */
+.btn_nav:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.05);
+    color: #000;
+}

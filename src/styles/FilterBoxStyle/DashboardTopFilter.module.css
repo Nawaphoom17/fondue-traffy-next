@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left_filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
