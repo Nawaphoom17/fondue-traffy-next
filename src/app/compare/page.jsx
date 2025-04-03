@@ -8,6 +8,8 @@ import EngageColumn from "../../components/Column/EngageColumn";
 import OtherColumn from "../../components/Column/OtherColumn";
 import CompareProvinceDrop from "../../components/DropDown/CompareProvinceDrop";
 import axios from "axios";
+import ComparePageSkeleton from "@/components/Skeleton/Page/ComparePageSkeleton";
+import CompareColumnSkeleton from "@/components/Skeleton/Column/CompareColumnSkeleton";
 
 function ComparePage() {
     const [province1, setProvince1] = useState({ name: "กรุงเทพมหานคร", });
@@ -79,11 +81,6 @@ function ComparePage() {
         console.log("--- testData2 มีการเปลี่ยนแปลง:", testData2);
     }, [testData2])
 
-    // ถ้าอันไหนยังโหลด => บอกว่า Loading
-    if (isLoading1 || isLoading2) {
-        return <p>Loading...</p>;
-    }
-
     return (
         <div className={styles.container} >
 
@@ -107,10 +104,10 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        <EfficiencyColumn stats={testData1} />
+                        {!isLoading1 ? <EfficiencyColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        <EfficiencyColumn stats={testData2} />
+                        {!isLoading2 ? <EfficiencyColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
 
                 </div>
@@ -122,12 +119,11 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        <EffectivenessColumn stats={testData1} />
+                        {!isLoading1 ? <EffectivenessColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        <EffectivenessColumn stats={testData2} />
+                        {!isLoading2 ? <EffectivenessColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
-
                 </div>
             </div>
 
@@ -137,10 +133,10 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        <EngageColumn stats={testData1} />
+                        {!isLoading1 ? <EngageColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        <EngageColumn stats={testData2} />
+                        {!isLoading2 ? <EngageColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
                 </div>
             </div>
@@ -151,10 +147,10 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        <OtherColumn stats={testData1} />
+                        {!isLoading1 ? <OtherColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        <OtherColumn stats={testData2} />
+                        {!isLoading2 ? <OtherColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
                 </div>
             </div>

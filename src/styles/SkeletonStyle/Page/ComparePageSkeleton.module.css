@@ -1,0 +1,121 @@
+/* Skeleton base style */
+.skeleton {
+  background-color: #e2e2e2;
+  border-radius: 4px;
+  margin: 8px 0;
+  width: 100%;
+  /* เพิ่มเอฟเฟกต์ไล่สี เพื่อให้ดู pulse หรือ shimmer ก็ได้ */
+  background: linear-gradient(90deg, #e2e2e2 25%, #f0f0f0 37%, #e2e2e2 63%);
+  /* background: linear-gradient(90deg, #e2e2e2 25%, #e43636 37%, #e2e2e2 63%); */
+  background-size: 400% 100%;
+  background-position: calc(300px + 100%) 0;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+/* ส่วนต่าง ๆ */
+.skeleton_post {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.skeleton.thumbnail {
+  height: 200px;
+}
+
+.skeleton.title {
+  height: 24px;
+}
+
+.skeleton.line {
+  height: 16px;
+}
+
+.skeleton.short {
+  width: 60%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeletonSectionHeader,
+.skeletonChart,
+.skeletonLine {
+  background: linear-gradient(90deg,
+      #e2e2e2 25%,
+      #f0f0f0 37%,
+      #e2e2e2 63%);
+  background-size: 400% 100%;
+}
+
+.skeletonContainer {
+  width: 100%;
+  height: auto;
+  min-height: 100dvh;
+  background-color: #f3f4f6;
+  padding: 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Section */
+.skeletonSection {
+  margin-bottom: 32px;
+}
+
+.skeletonSectionHeader {
+  max-width: 50%;
+  height: 24px;
+  margin-bottom: 16px;
+  background-color: #e2e2e2;
+  border-radius: 4px;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeletonTable {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skeletonColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeletonIcon {
+  width: 100%;
+  height: 120px;
+  background-color: #e2e2e2;
+  border-radius: 4px;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeletonLine {
+  width: 100%;
+  height: 16px;
+  background-color: #e2e2e2;
+  border-radius: 4px;
+  animation: shimmer 1.4s ease infinite;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: 200px 0;
+  }
+}

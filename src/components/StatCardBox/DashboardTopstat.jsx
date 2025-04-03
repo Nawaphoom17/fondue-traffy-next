@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useState, useRef, useEffect, forwardRef } from "react";
-import AllReportStat from '../StatCard/AllReportStat'
-import FinishReportStat from '../StatCard/FinishReportStat'
-import FinishTimeStat from '../StatCard/FinishTimeStat'
-import InProgressTimeStat from '../StatCard/InProgressTimeStat'
-import styles from '../../styles/StatCardBoxStyle/DashboardTopStat.module.css'
+import AllReportStat from '@/components/StatCard/AllReportStat'
+import FinishReportStat from '@/components/StatCard/FinishReportStat'
+import FinishTimeStat from '@/components/StatCard/FinishTimeStat'
+import InProgressTimeStat from '@/components/StatCard/InProgressTimeStat'
+import styles from '@/styles/StatCardBoxStyle/DashboardTopStat.module.css'
+import HomePageSkeleton from '@/components/Skeleton/Page/HomePageSkeleton';
 
 
 function DashboardTopstat({ stats, period }) {
@@ -15,7 +16,7 @@ function DashboardTopstat({ stats, period }) {
 
     console.log("period:", period)
     if (!stats || Object.keys(stats).length === 0) {
-        return <p>Loading...</p>;
+        return <HomePageSkeleton />;
     }
 
     let statsEachPeriod;
