@@ -109,8 +109,8 @@ function HomePage(props) {
             <div className={styles.mid_container}>
                 {/* <DashboardMap /> */}
                 <div className={styles.chart_container}>
-                    <TopProblemChart chartData={testData} period={selectedPeriodOption} />
-                    <MostImportantProblem chartData={testData} period={selectedPeriodOption} />
+                    {/* <TopProblemChart chartData={testData} period={selectedPeriodOption} /> */}
+                    {/* <MostImportantProblem chartData={testData} period={selectedPeriodOption} /> */}
                 </div>
             </div>
         </div>

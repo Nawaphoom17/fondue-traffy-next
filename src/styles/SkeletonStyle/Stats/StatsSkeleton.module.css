@@ -1,0 +1,61 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #ddd;
+    border-radius: 4px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.lebel {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.lebel_text {
+    
+    width: 50%;
+    height: 1rem;
+}
+
+.data {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    padding: 4px ;
+    width: 60%;
+    height: 2.25rem;
+}
+
+.icon,
+.lebel_text,
+.data {
+    border-radius: 4px;
+    background: linear-gradient(90deg,
+            #e2e2e2 25%,
+            #f0f0f0 37%,
+            #e2e2e2 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: 200px 0;
+    }
+}
