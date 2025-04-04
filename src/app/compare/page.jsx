@@ -36,7 +36,9 @@ function ComparePage() {
         //const org = selectedOrgOption.name;
 
         // สร้าง URL โดยแปลงค่าให้ปลอดภัย
-        const queryString = `province=${encodeURIComponent(province)}&year=${encodeURIComponent(period)}`;
+        // const queryString = `province=${encodeURIComponent(province)}&year=${encodeURIComponent(period)}`;
+        const queryString = `province=${province}&year=${period}`;
+        console.log("queryString:", queryString);
 
         // เรียก API Route ที่เราได้สร้างไว้แทนที่จะเรียก API ภายนอกโดยตรง
         axios.get(`/api/data/mockaroo/compare?${queryString}`)
@@ -60,7 +62,8 @@ function ComparePage() {
         //const org = selectedOrgOption.name;
 
         // สร้าง URL โดยแปลงค่าให้ปลอดภัย
-        const queryString = `province=${encodeURIComponent(province)}&year=${encodeURIComponent(period)}`;
+        // const queryString = `province=${encodeURIComponent(province)}&year=${encodeURIComponent(period)}`;
+        const queryString = `province=${province}&year=${period}`;
 
         // เรียก API Route ที่เราได้สร้างไว้แทนที่จะเรียก API ภายนอกโดยตรง
         axios.get(`/api/data/mockaroo/compare?${queryString}`)
@@ -80,6 +83,10 @@ function ComparePage() {
     useEffect(() => {
         console.log("--- testData2 มีการเปลี่ยนแปลง:", testData2);
     }, [testData2])
+
+    const hasData1 = !isLoading1 && Object.keys(testData1).length > 0;
+    const hasData2 = !isLoading2 && Object.keys(testData2).length > 0;
+
 
     return (
         <div className={styles.container} >
@@ -104,10 +111,10 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        {!isLoading1 ? <EfficiencyColumn stats={testData1} /> : <CompareColumnSkeleton />}
+                        {hasData1 ? <EfficiencyColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        {!isLoading2 ? <EfficiencyColumn stats={testData2} /> : <CompareColumnSkeleton />}
+                        {hasData2 ? <EfficiencyColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
 
                 </div>
@@ -119,10 +126,10 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        {!isLoading1 ? <EffectivenessColumn stats={testData1} /> : <CompareColumnSkeleton />}
+                        {hasData1 ? <EffectivenessColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        {!isLoading2 ? <EffectivenessColumn stats={testData2} /> : <CompareColumnSkeleton />}
+                        {hasData2 ? <EffectivenessColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
                 </div>
             </div>
@@ -133,10 +140,10 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        {!isLoading1 ? <EngageColumn stats={testData1} /> : <CompareColumnSkeleton />}
+                        {hasData1 ? <EngageColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        {!isLoading2 ? <EngageColumn stats={testData2} /> : <CompareColumnSkeleton />}
+                        {hasData2 ? <EngageColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
                 </div>
             </div>
@@ -147,10 +154,10 @@ function ComparePage() {
                 </div>
                 <div className={styles.table_content}>
                     <div className={styles.first_column}>
-                        {!isLoading1 ? <OtherColumn stats={testData1} /> : <CompareColumnSkeleton />}
+                        {hasData1 ? <OtherColumn stats={testData1} /> : <CompareColumnSkeleton />}
                     </div>
                     <div className={styles.second_column}>
-                        {!isLoading2 ? <OtherColumn stats={testData2} /> : <CompareColumnSkeleton />}
+                        {hasData2 ? <OtherColumn stats={testData2} /> : <CompareColumnSkeleton />}
                     </div>
                 </div>
             </div>

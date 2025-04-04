@@ -14,7 +14,7 @@ function AllReportStat({ data, periodName }) {
         return (
             <div className={styles.container}>
                 <div className={styles.label}>
-                    <FaRegMessage size={24} />
+                    <FaRegMessage color="#074EE8" size={24} />
                     <p>เรื่องแจ้งทั้งหมด</p>
                 </div>
                 {data?.data_comparison_monthly?.[0]
@@ -28,7 +28,7 @@ function AllReportStat({ data, periodName }) {
         return (
             <div className={styles.container}>
                 <div className={styles.label}>
-                    <FaRegMessage size={24} />
+                    <FaRegMessage color="#074EE8" size={24} />
                     <p>เรื่องแจ้งทั้งหมด</p>
                 </div>
                 {data?.post_count_all //ถ้าเปลี่ยน default ของ period ก็ต้องเช็ค data.post_count_all ด้วย

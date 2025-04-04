@@ -1,0 +1,103 @@
+{
+    "province_name": "กรุงเทพมหานคร",
+    "province_id": 96,
+    "year": "รายเดือน",
+    "org_name": "หน่วยงานทั้งหมด",
+    "post_count_all": 308992,
+    "post_count_finish": 168479,
+    "post_finish_percentage": 54.53,
+    "avg_finish_day": 10,
+    "avg_start_hour": 8,
+    "vote_count_all": 14435,
+    "top_3_posted_problem": [
+        {
+            "rank": 1,
+            "problem_type": "ความสะอาด",
+            "percentage": 12.38,
+            "count": 38253
+        },
+        {
+            "rank": 2,
+            "problem_type": "ผิดกฎจราจร",
+            "percentage": 10.85,
+            "count": 33525
+        },
+        {
+            "rank": 3,
+            "problem_type": "ถนน",
+            "percentage": 9.88,
+            "count": 30528
+        }
+    ],
+    "top_3_voted_problem": [
+        {
+            "rank": 1,
+            "problem_type": "ทางเท้า",
+            "percentage": 14.08,
+            "count": 2032
+        },
+        {
+            "rank": 2,
+            "problem_type": "ถนน",
+            "percentage": 10.32,
+            "count": 1489
+        },
+        {
+            "rank": 3,
+            "problem_type": "ถนน",
+            "percentage": 9.94,
+            "count": 1434
+        }
+    ],
+    "data_comparison_monthly": [
+        {
+            "yyyy_mm": "2025-01",
+            "post_count_all_m": 21577,
+            "post_count_finish_m": 9674,
+            "post_finish_percentage_m": 44.83,
+            "avg_finish_day_m": 8,
+            "avg_start_hour_m": 14,
+            "vote_count_all_m": 1307,
+            "top_3_posted_problem_m": [
+                {
+                    "rank": 1,
+                    "problem_type": "ผิดกฎจราจร",
+                    "percentage": 14.93,
+                    "count": 3221
+                },
+                {
+                    "rank": 2,
+                    "problem_type": "ไฟฟ้า",
+                    "percentage": 11.68,
+                    "count": 2520
+                },
+                {
+                    "rank": 3,
+                    "problem_type": "ถนน",
+                    "percentage": 9.84,
+                    "count": 2123
+                }
+            ],
+            "top_3_voted_problem_m": [
+                {
+                    "rank": 1,
+                    "problem_type": "ความสะอาด",
+                    "percentage": 12.85,
+                    "count": 167
+                },
+                {
+                    "rank": 2,
+                    "problem_type": "ทางเท้า",
+                    "percentage": 10.56,
+                    "count": 138
+                },
+                {
+                    "rank": 3,
+                    "problem_type": "ไฟฟ้า",
+                    "percentage": 9.05,
+                    "count": 118
+                }
+            ]
+        }
+    ]
+}

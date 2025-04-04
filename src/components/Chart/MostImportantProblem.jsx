@@ -2,12 +2,21 @@ import React from 'react'
 import ReactECharts from "echarts-for-react";
 import styles from '../../styles/ChartStyle/TopProblemChart.module.css'
 import { LuUserPlus } from "react-icons/lu";
+import HBarChartSkeleton from "../Skeleton/Chart/HBarChartSkeleton";
 
 function MostImportantProblem({ chartData, period }) {
 
     console.log("period:", period)
     if (!chartData || Object.keys(chartData).length === 0) {
-        return <p>Loading...</p>;
+        return (
+            <div className={styles.container}>
+                <div className={styles.title}>
+                    <LuUserPlus size={32} />
+                    <p>Top 3 ปัญหาโหวตให้ความสำคัญสูง</p>
+                </div>
+                <HBarChartSkeleton />
+            </div>
+        );
     }
 
     let mostChartDataEachPeriod;
@@ -51,7 +60,8 @@ function MostImportantProblem({ chartData, period }) {
                 name: period.name,
                 type: "bar",
                 data: mostChartDataEachPeriod.map((item) => item.count).reverse(),
-                barWidth: 50,
+                barMinWidth: 24, // แท่งจะมีความกว้างอย่างน้อย 20px
+                barMaxWidth: 52, // แท่งจะมีความกว้างไม่เกิน 50px
                 label: {
                     show: true,
                     formatter: ({ value }) => value.toLocaleString(), // ใส่เครื่องหมาย , ขั้นหลัก

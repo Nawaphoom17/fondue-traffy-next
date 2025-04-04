@@ -13,7 +13,7 @@ function FinishReportStat({ data, periodName }) {
         return (
             <div className={styles.container}>
                 <div className={styles.label}>
-                    <LuCircleCheckBig size={24} />
+                    <LuCircleCheckBig color="#34C759" size={24} />
                     <p>แก้ไขแล้ว</p>
                 </div>
                 {data?.data_comparison_monthly?.[0] 
@@ -27,7 +27,7 @@ function FinishReportStat({ data, periodName }) {
         return (
             <div className={styles.container}>
                 <div className={styles.label}>
-                    <LuCircleCheckBig size={24} />
+                    <LuCircleCheckBig color="#34C759" size={24} />
                     <p>แก้ไขแล้ว</p>
                 </div>
                 {data?.post_finish_percentage //ถ้าเปลี่ยน default ของ period ก็ต้องเช็ค data. ด้วย

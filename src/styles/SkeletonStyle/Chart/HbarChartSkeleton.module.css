@@ -1,0 +1,66 @@
+.skeleton_container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    /* padding-left: 10px; ให้มีพื้นที่สำหรับเส้น baseline */
+}
+
+/* สร้างเส้นแนวตั้งที่ด้านซ้ายของ container */
+.skeleton_container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    /* background-color: #ccc; */
+    background: linear-gradient(90deg, #e2e2e2 25%, #f0f0f0 37%, #e2e2e2 63%);
+
+}
+
+/* กำหนดสไตล์พื้นฐานของแท่ง (bar) */
+.bar {
+    border-radius: 4px;
+    height: 3.25rem; /* ความสูงของ bar */
+    background: linear-gradient(90deg, #e2e2e2 25%, #f0f0f0 37%, #e2e2e2 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+}
+
+/* กำหนดความกว้างแตกต่างกันโดยใช้ nth-child */
+.bar:nth-child(1) {
+    width: 80%;
+}
+
+.bar:nth-child(2) {
+    width: 60%;
+}
+
+.bar:nth-child(3) {
+    width: 40%;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* ตัวอย่าง media query เพื่อให้ responsive */
+@media (max-width: 600px) {
+    .bar {
+        height: 2rem;
+        /* ลดความสูงลงเมื่อหน้าจอเล็ก */
+    }
+}

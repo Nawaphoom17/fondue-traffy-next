@@ -1,5 +1,9 @@
 // app/api/data/mockaroo/route.js
 import axios from "axios";
+import https from 'https'; // ใช้ https module เพื่อจัดการกับ SSL certificate
+import mockData from "@/mock/homestats.json"; // นำเข้าข้อมูล mockData จากไฟล์ JSON
+
+const agent = new https.Agent({ rejectUnauthorized: false }); // ❗❗❗ ปิดการตรวจสอบ SSL certificate (ไม่แนะนำใน production)
 
 export async function GET(request) {
   try {
@@ -15,8 +19,11 @@ export async function GET(request) {
     const url = `https://my.api.mockaroo.com/stats.json?key=86a51270&province=${province}&year=${year}&org=${org}`;
 
     // ดึงข้อมูลจาก API ภายนอก
-    const response = await axios.get(url);
+    // const response = await axios.get(url);
+    const response = await axios.get(url, { httpsAgent: agent });
     const data = response.data;
+
+    console.log("🎯 ข้อมูลจาก mockaroo:", data); // เพิ่ม log
 
     // ส่งกลับข้อมูลในรูปแบบ JSON
     return Response.json(data);

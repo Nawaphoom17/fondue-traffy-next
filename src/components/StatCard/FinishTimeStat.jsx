@@ -14,7 +14,7 @@ function FinishTimeStat({ data, periodName }) {
         return (
             <div className={styles.container}>
                 <div className={styles.label}>
-                    <FaRegCalendarCheck size={24} />
+                    <FaRegCalendarCheck color="#FFCC00" size={24} />
                     <p>ปกติเสร็จสิ้นใน</p>
                 </div>
                 {data?.data_comparison_monthly?.[0] 
@@ -28,7 +28,7 @@ function FinishTimeStat({ data, periodName }) {
         return (
             <div className={styles.container}>
                 <div className={styles.label}>
-                    <FaRegCalendarCheck size={24} />
+                    <FaRegCalendarCheck color="#FFCC00" size={24} />
                     <p>ปกติเสร็จสิ้นใน</p>
                 </div>
                 {data?.avg_finish_day //ถ้าเปลี่ยน default ของ period ก็ต้องเช็ค data. ด้วย

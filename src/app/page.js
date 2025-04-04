@@ -6,7 +6,7 @@ import DashboardTopstat from '@/components/StatCardBox/DashboardTopstat'
 // import DashboardMap from '@/components/Map/DashboardMap'
 import TopProblemChart from '@/components/Chart/TopProblemChart'
 import MostImportantProblem from '@/components/Chart/MostImportantProblem'
-import styles from '@/styles/PageStyle/DashboardPage.module.css'
+import styles from '../styles/PageStyle/DashboardPage.module.css'
 import * as Api from "@/api/Api";
 import useCustom from "@/api/customHook";
 import axios from "axios";
@@ -78,7 +78,9 @@ function HomePage(props) {
         const period = selectedPeriodOption.name;
 
         // สร้าง URL โดยแปลงค่าให้ปลอดภัย
-        const queryString = `province=${encodeURIComponent(province)}&year=${encodeURIComponent(period)}&org=${encodeURIComponent(org)}`;
+        // const queryString = `province=${encodeURIComponent(province)}&year=${encodeURIComponent(period)}&org=${encodeURIComponent(org)}`;
+        const queryString = `province=${province}&year=${period}&org=${org}`;
+        console.log("queryString:", queryString);
 
         // เรียก API Route ที่เราได้สร้างไว้แทนที่จะเรียก API ภายนอกโดยตรง
         axios.get(`/api/data/mockaroo/dashboard?${queryString}`)
@@ -109,8 +111,8 @@ function HomePage(props) {
             <div className={styles.mid_container}>
                 {/* <DashboardMap /> */}
                 <div className={styles.chart_container}>
-                    {/* <TopProblemChart chartData={testData} period={selectedPeriodOption} /> */}
-                    {/* <MostImportantProblem chartData={testData} period={selectedPeriodOption} /> */}
+                    <TopProblemChart chartData={testData} period={selectedPeriodOption} />
+                    <MostImportantProblem chartData={testData} period={selectedPeriodOption} />
                 </div>
             </div>
         </div>
