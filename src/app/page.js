@@ -10,6 +10,7 @@ import styles from '../styles/PageStyle/DashboardPage.module.css'
 import * as Api from "@/api/Api";
 import useCustom from "@/api/customHook";
 import axios from "axios";
+import MapMain from "@/utils/MapMain";
 
 function HomePage(props) {
     const [selectedProvinceOption, setSelectedProvinceOption] = useState({ name: "กรุงเทพมหานคร", });
@@ -110,6 +111,9 @@ function HomePage(props) {
             <DashboardTopstat stats={testData} period={selectedPeriodOption} />
             <div className={styles.mid_container}>
                 {/* <DashboardMap /> */}
+                <div className={styles.chart_container}>
+                    <MapMain />
+                </div>
                 <div className={styles.chart_container}>
                     <TopProblemChart chartData={testData} period={selectedPeriodOption} />
                     <MostImportantProblem chartData={testData} period={selectedPeriodOption} />
