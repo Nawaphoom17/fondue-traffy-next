@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect, forwardRef } from "react";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa6";
 
 function ProvinceDrop({province, setProvince}) {
-    const [selectedOption, setSelectedOption] = useState({ name: "กรุงเทพมหานคร2", });
+    // const [selectedOption, setSelectedOption] = useState({ name: "กรุงเทพมหานคร2", });
     const [Show, setShow] = useState(false);
 
     const [List, setList] = useState([
