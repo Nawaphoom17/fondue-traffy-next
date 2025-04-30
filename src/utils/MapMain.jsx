@@ -40,19 +40,24 @@ const MapMain = ({ data, isMobile, clickForShowModalPost, handleDownload }) => {
 
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src =
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyDmAQ43JlSH303YzressfXApjE3j9-AJXI&libraries=marker,visualization&v=beta";
-    script.async = true;
-    script.onload = () => {
-      if (window.google && window.google.maps) {
-        initMap();
-      } else {
-        console.error("Google Maps API failed to load.");
-      }
-    };
-    document.head.appendChild(script);
+    if (!window.google) {
+      const script = document.createElement("script");
+      script.src =
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyDmAQ43JlSH303YzressfXApjE3j9-AJXI&libraries=marker,visualization&v=beta";
+      script.async = true;
+      script.onload = () => {
+        if (window.google && window.google.maps) {
+          initMap();
+        } else {
+          console.error("Google Maps API failed to load.");
+        }
+      };
+      document.head.appendChild(script);
+    } else {
+      initMap();
+    }
   }, []);
+  
 
 
   useEffect(() => {
