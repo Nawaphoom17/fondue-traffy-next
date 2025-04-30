@@ -22,10 +22,10 @@ function Nav() {
             window.open("https://landing.traffy.in.th/?key=cdTKECqN", "_blank")
         }
         else if (num == 2) {
-            window.open("https://google.com", "_blank")
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSd69INwQZx9OtiwuPufZwOYNckWJFgUm8lmJiYavLLiWyuQwQ/viewform", "_blank")
         }
         else if (num == 3) {
-            window.open("https://youtube.com", "_blank")
+            window.open("https://youtube.com/@fonduehelp?si=us7qXA3sg6LSZ_y4", "_blank")
         }
 
     }
@@ -52,16 +52,16 @@ function Nav() {
                     หน้าแรก
                 </Link>
                 <Link
-                    href="/dashboard"
-                    className={pathname === '/dashboard' ? styles.active : ''}
-                >
-                    แดชบอร์ด
-                </Link>
-                <Link
                     href="/compare"
                     className={pathname === '/compare' ? styles.active : ''}
                 >
                     เปรียบเทียบ
+                </Link>
+                <Link
+                    href="/post"
+                    className={pathname === '/post' ? styles.active : ''}
+                >
+                    รายการเรื่องแจ้ง
                 </Link>
             </div>
 
@@ -78,7 +78,7 @@ function Nav() {
                     clicked(2);
                 }}>
                     <SiGoogleforms size={24} />
-                    <a href="">แจ้งเรื่องผ่านGoogle</a>
+                    <a href="">แบบสอบถาม</a>
                 </div>
                 <div className={styles.btn_nav} onClick={(event) => {
                     event.preventDefault();

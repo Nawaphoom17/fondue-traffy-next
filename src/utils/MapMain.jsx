@@ -109,7 +109,7 @@ const MapMain = ({ data, isMobile, clickForShowModalPost, handleDownload }) => {
         lng: parseFloat(v.geometry.coordinates[0]),
       };
 
-      console.log("coord:", coord)
+      // console.log("coord:", coord)
 
       const data_type = v.properties.problem_type_fondue;
       const color = v.properties.state_type_latest;
