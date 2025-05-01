@@ -18,6 +18,7 @@ const MapMain = ({ data, isMobile, clickForShowModalPost, handleDownload }) => {
   // 6.3
 
   const [testData, setTestData] = useState(null);
+  const [mapsLoaded, setMapsLoaded] = useState(false); // สถานะการโหลด Google Maps
 
   useEffect(() => {
     if (!testData) {
@@ -43,21 +44,27 @@ const MapMain = ({ data, isMobile, clickForShowModalPost, handleDownload }) => {
     if (!window.google) {
       const script = document.createElement("script");
       script.src =
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyDmAQ43JlSH303YzressfXApjE3j9-AJXI&libraries=marker,visualization&v=beta";
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCSdjBr_UkUuKmD_NKXY4yjaNk153nZRZc&libraries=marker,visualization&v=beta";
       script.async = true;
       script.onload = () => {
         if (window.google && window.google.maps) {
+          setMapsLoaded(true); // เมื่อ Google Maps API โหลดสำเร็จ
           initMap();
         } else {
           console.error("Google Maps API failed to load.");
+          setMapsLoaded(false); // ถ้าไม่สามารถโหลดได้
         }
+      };
+      script.onerror = () => {
+        setMapsLoaded(false); // ถ้ามีข้อผิดพลาดในการโหลด
       };
       document.head.appendChild(script);
     } else {
+      setMapsLoaded(true); // ถ้า Google Maps API โหลดแล้ว
       initMap();
     }
   }, []);
-  
+
 
 
   useEffect(() => {
